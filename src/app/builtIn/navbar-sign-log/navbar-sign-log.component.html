@@ -1,0 +1,77 @@
+<!-- Navbar Component Template -->
+<!-- <div class="container d-flex justify-content-between my-3">
+  <a routerLink="/account">Account</a>
+  <a routerLink="/cart">Cart</a>
+  <a routerLink="/wish-list">WishList</a>
+  <a routerLink="/category">Category</a>
+  <a routerLink="/product-details">Product Details</a>
+  <a routerLink="/Address">Address</a>
+</div> -->
+<div class="container">
+    <nav class="navbar p-3 mb-4">
+      <!-- Left side - Logo -->
+      <div class="logo">
+        <span class="brand-name text-white">Exclusive</span>
+      </div>
+  
+      <!-- Center - Navigation Links -->
+      <ul class="nav justify-content-center mx-auto text-white">
+        <li class="nav-item">
+          <a class="nav-link text-white">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white">Contact</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" >About</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="/signUp">Sign Up</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link text-white" routerLink="/login">Log in</a>
+        </li>
+      </ul>
+  
+      <!-- Right side - Search Bar, Wishlist, Cart, and User Icons -->
+      <div class="d-flex align-items-center text-white">
+        <!-- Search Form -->
+        <form class="d-flex text-white" role="search">
+          <input class="form-control me-2" type="search" placeholder="What are you looking for?" aria-label="Search" style="max-width: 200px;">
+          <button class="btn btn-outline-secondary text-white" type="submit">
+            <i class="fa-solid fa-magnifying-glass text-white"></i>
+          </button>
+        </form>
+  
+        <!-- Wishlist Icon -->
+        <button class="btn btn-outline-none ms-3 text-white">
+          <i class="fa-regular fa-heart"></i>
+        </button>
+  
+        <!-- Cart Icon with Badge -->
+        <button class="btn btn-outline-none position-relative ms-3 text-white" >
+          <i class="fa-solid fa-cart-shopping" routerLink="/cart"></i>
+          <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger ">
+            3
+          </span>
+        </button>
+  
+        <!-- User Profile Icon and Sidebar Toggle Button -->
+        <button class="btn btn-outline-none ms-3 bg-danger rounded-circle text-white" *ngIf="isClicked && isSubmitted" (click)="toggleSidebar()">
+          <i class="fa-regular fa-user"></i>
+        </button>
+      </div>
+    </nav>
+  
+    <!-- Sidebar (Controlled by isSidebarVisible) -->
+    <div class="sidebar-container mt-3 " style="transform: translate(67rem, -56px);" *ngIf="isSidebarVisible">
+      <div class="menu-item" *ngFor="let item of menuItems">
+        <div class="icon-container">
+          <img [src]="item.icon" alt="{{ item.title }} Icon" class="menu-icon">
+        </div>
+        <div class="text-container text-dark">
+          <span>{{ item.title }}</span>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,44 @@
+<app-top-banner></app-top-banner>
+<app-navbar></app-navbar>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-12">
+      <div class="d-flex">
+        <span class="bg-danger d-inline-block rounded-2" style="width: 1rem; height: 2rem;"></span>
+        <h6 class="text-danger mx-2">Products</h6>
+      </div>
+
+      <h5 class="mt-4 mb-4 text-white">Category Name</h5>
+      
+      <!-- Loop through the ProductCategory array and pass each item to the app-card component -->
+      <div class="row">     
+        <!-- Loading From browse By Category(Home) to ProductByCategory(<=) -->
+
+        <div class="sk-cube-grid col-12" *ngIf="!flag">
+          <div class="sk-cube sk-cube1"></div>
+          <div class="sk-cube sk-cube2"></div>
+          <div class="sk-cube sk-cube3"></div>
+          <div class="sk-cube sk-cube4"></div>
+          <div class="sk-cube sk-cube5"></div>
+          <div class="sk-cube sk-cube6"></div>
+          <div class="sk-cube sk-cube7"></div>
+          <div class="sk-cube sk-cube8"></div>
+          <div class="sk-cube sk-cube9"></div>
+        </div>
+      
+        <ng-container *ngIf="flag">
+        <div class="col-lg-3 col-md-4 col-sm-6 mb-4" *ngFor="let item of ProductCategory">
+          <!-- Pass each product item to the app-card component using the correct @Input property -->
+          <app-card [ProductCategory]="item"></app-card>
+        </div>
+      </ng-container>
+        
+      </div>
+    </div>
+  </div>
+</div>
+
+<app-footer-section></app-footer-section>
+

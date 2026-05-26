@@ -1,0 +1,121 @@
+<!-- Navbar Component Template -->
+<div class="container d-flex justify-content-between my-3">
+  <a routerLink="/account">Account</a>
+  <a routerLink="/cart">Cart</a>
+  <a routerLink="/wish-list">WishList</a>
+  <a routerLink="/category">Category</a>
+  <a routerLink="/product-details">Product Details</a>
+  <a routerLink="/Address">Address</a>
+</div>
+
+<!-- Navbar Container -->
+<div class="container">
+  <nav class="navbar bg-white text-dark p-3 mb-4">
+    <!-- Left side - Logo -->
+    <div class="logo">
+      <span class="brand-name">Exclusive</span>
+    </div>
+    
+
+    <!-- Center - Navigation Links -->
+    <ul class="nav justify-content-center mx-auto">
+      <li class="nav-item">
+        <a class="nav-link text-dark" routerLink="">Home</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-dark" >Contact</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-dark">About</a>
+      </li>
+      <li class="nav-item">
+        <a class="nav-link text-dark" routerLink="/signUp">Sign Up</a>
+      </li>
+    </ul>
+
+    <!-- Right side - Search Bar, Wishlist, Cart, and User Icons -->
+    <div class="d-flex align-items-center">
+      <!-- Search Form -->
+      <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="What are you looking for?" aria-label="Search" style="max-width: 200px;">
+        <button class="btn btn-outline-secondary" type="submit">
+          <i class="fa-solid fa-magnifying-glass"></i>
+        </button>
+      </form>
+
+      <!-- Wishlist Icon -->
+      <button class="btn btn-outline-none ms-3">
+        <i class="fa-regular fa-heart"></i>
+      </button>
+
+      <!-- Cart Icon with Badge -->
+      <button class="btn btn-outline-none position-relative ms-3">
+        <i class="fa-solid fa-cart-shopping"></i>
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+          3
+        </span>
+      </button>
+
+      <!-- User Profile Icon and Sidebar Toggle Button -->
+      <button class="btn btn-outline-none ms-3 bg-danger rounded-circle" *ngIf="isClicked && isSubmitted" (click)="toggleSidebar()">
+        <i class="fa-regular fa-user"></i>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Sidebar (Controlled by isSidebarVisible) -->
+  <div class="sidebar-container mt-3" style="transform: translate(67rem, -56px);" *ngIf="isSidebarVisible">
+    <!-- Menu Item: Manage My Account -->
+    <div class="menu-item" (click)="isSidebarVisible = false">
+      <div class="icon-container">
+        <img src="https://img.icons8.com/ios-filled/50/guest-male--v1.png" alt="Manage My Account Icon" class="menu-icon">
+      </div>
+      <div class="text-container text-dark">
+        <a routerLink="/address" class="text-decoration-none text-dark">Manage My Account</a>
+      </div>
+    </div>
+  
+    <!-- Menu Item: My Order -->
+    <div class="menu-item" (click)="isSidebarVisible = false">
+      <div class="icon-container">
+        <img src="https://img.icons8.com/glyph-neue/64/purchase-order.png" alt="My Order Icon" class="menu-icon">
+      </div>
+      <div class="text-container text-dark">
+        <a routerLink="/my-orders" class="text-decoration-none text-dark">My Order</a>
+      </div>
+    </div>
+  
+    <!-- Menu Item: My Cancellations -->
+    <div class="menu-item" (click)="isSidebarVisible = false">
+      <div class="icon-container">
+        <img src="https://img.icons8.com/ios-filled/50/cancel.png" alt="My Cancellations Icon" class="menu-icon">
+      </div>
+      <div class="text-container text-dark">
+        <a routerLink="/my-cancellations" class="text-decoration-none text-dark">My Cancellations</a>
+      </div>
+    </div>
+  
+    <!-- Menu Item: My Reviews -->
+    <div class="menu-item" (click)="isSidebarVisible = false">
+      <div class="icon-container">
+        <img src="https://img.icons8.com/ios-filled/50/star--v1.png" alt="My Reviews Icon" class="menu-icon">
+      </div>
+      <div class="text-container text-dark">
+        <a routerLink="/my-reviews" class="text-decoration-none text-dark">My Reviews</a>
+      </div>
+    </div>
+  
+    <!-- Menu Item: Logout -->
+    <div class="menu-item" (click)="isSidebarVisible = false" routerLink="/signUp">
+      <div class="icon-container" routerLink="/signUp">
+        <img src="https://img.icons8.com/ios-filled/50/exit.png" routerLink="/signUp" alt="Logout Icon" class="menu-icon">
+      </div>
+      <div class="text-container text-dark">
+        <a routerLink="/signUp" class="text-decoration-none text-dark">Logout</a>
+      </div>
+    </div>
+  </div>
+  
+  
+</div>
+

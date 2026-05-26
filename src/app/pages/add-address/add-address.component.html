@@ -1,0 +1,170 @@
+<div class="container-fluid">
+  <div class="row">
+    <!-- Sidebar Navigation -->
+    <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+      <div class="position-sticky pt-3">
+        <div class="profile-header text-center">
+          <!-- Profile Image -->
+          <img [src]="profileImage" class="rounded-circle mb-2" alt="Profile Image" width="100px" height="100px">
+          <h4>Mostafa Faried</h4>
+        </div>
+        <!-- Sidebar Links -->
+        <ul class="nav flex-column">
+          <li class="nav-item">
+            <a class="nav-link active" href="#">
+              <span data-feather="home"></span>
+              My Profile
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="lock"></span>
+              Change password
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="book"></span>
+              Addresses
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="clock"></span>
+              Activity History
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="tag"></span>
+              My Coupons
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="star"></span>
+              My Points
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="credit-card"></span>
+              My Wallet
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="users"></span>
+              Your Communities
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="refresh-cw"></span>
+              Refund requests
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">
+              <span data-feather="message-circle"></span>
+              My complaints
+            </a>
+          </li>
+        </ul>
+        <!-- Logout -->
+        <div class="logout">
+          <a href="#" class="nav-link text-danger">
+            <span data-feather="log-out"></span>
+            Logout
+          </a>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main Content Area -->
+    <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+      <div class="container">
+        <div class="row">
+          <div class="col">
+            <h3 class="mt-4 mb-4 text-info">Add Address</h3>
+            <!-- Form Section -->
+            <form [formGroup]="testForm" class="row">
+              <!-- country -->
+              <div class="col-12 mb-4">
+                <ng-select formControlName="country_id" [items]="countries" bindLabel="name" bindValue="id" (change)="handleGovernate($event)"
+                  placeholder="Choose Country Name"></ng-select>
+                <div *ngIf="is_submit == true && testForm.get('country_id')?.invalid" class="text-danger">
+                  Country is required.
+                </div>
+              </div>
+              <!-- state -->
+              <div class="col-12 mb-4">
+                <ng-select formControlName="state_id" [items]="states" bindLabel="name" bindValue="id" (change)="handleCities($event)"
+                  placeholder="Choose State Name"></ng-select>
+                <div *ngIf="is_submit == true && testForm.get('state_id')?.invalid" class="text-danger">
+                  State is required.
+                </div>
+              </div>
+              <!-- city -->
+              <div class="col-12 mb-4">
+                <ng-select formControlName="city" [items]="cities" bindLabel="name_en" bindValue="id"
+                  placeholder="Choose City Name"></ng-select>
+                <div *ngIf="is_submit == true && testForm.get('city')?.invalid" class="text-danger">
+                  City is required.
+                </div>
+              </div>
+              <!-- Suburb -->
+              <div class="col-12 mb-4">
+                <input formControlName="suburb" type="text" class="form-control" placeholder="Suburb">
+                <div *ngIf="is_submit == true && testForm.get('suburb')?.invalid" class="text-danger">
+                  <div *ngIf="testForm.get('suburb')?.invalid">suburb is required.</div>
+                </div>
+              </div>
+              <!-- phone -->
+              <div class="col-12 mb-4">
+                <input formControlName="phone" type="tel" class="form-control" placeholder="Phone">
+                <div *ngIf="is_submit == true && testForm.get('phone')?.invalid" class="text-danger">
+                  <div *ngIf="testForm.get('phone')?.invalid">Phone is required.</div>
+                </div>
+              </div>
+              <!-- Street -->
+              <div class="col-12 mb-4">
+                <input formControlName="street_address" type="text" class="form-control" placeholder="Street">
+                <div *ngIf="is_submit == true && testForm.get('street_address')?.invalid" class="text-danger">
+                  Street is required.
+                </div>
+              </div>
+              <!-- Building Number -->
+              <div class="col-12 mb-4">
+                <input formControlName="building_number" type="text" class="form-control" placeholder="Building Number">
+                <div *ngIf="is_submit == true && testForm.get('building_number')?.invalid" class="text-danger">
+                  Building Number is required.
+                </div>
+              </div>
+              <!-- Floor Number -->
+              <div class="col-12 mb-4">
+                <input formControlName="floor_number" type="text" class="form-control" placeholder="Floor Number">
+                <div *ngIf="is_submit == true && testForm.get('floor_number')?.invalid" class="text-danger">
+                  Floor Number is required.
+                </div>
+              </div>
+              <!-- Flat Number -->
+              <div class="col-12 mb-4">
+                <input formControlName="flat_number" type="text" class="form-control" placeholder="Flat Number">
+                <div *ngIf="is_submit == true && testForm.get('flat_number')?.invalid" class="text-danger">
+                  Flat Number is required.
+                </div>
+              </div>
+              
+              <div class="col-12">
+                <div class="text-start">
+                  <button class="btn btn-primary" (click)="onSubmit()">Save Changes</button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </main>
+  </div>
+</div>

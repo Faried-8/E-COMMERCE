@@ -1,0 +1,21 @@
+.ng-clear-wrapper {
+    cursor: pointer;
+    color: red;
+    padding: 0 8px;
+  }
+  
+  .ng-clear {
+    font-size: 16px;
+  }
+
+  .ng-clear-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  
+  .ng-clear {
+    color: red; /* Customize the color of the clear icon */
+    font-size: 16px; /* Adjust the size as needed */
+  }

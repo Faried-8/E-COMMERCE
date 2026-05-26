@@ -1,0 +1,13 @@
+.error-template {
+    padding: 40px 15px;
+    text-align: center;
+  }
+  
+  .error-template h1 {
+    font-size: 3.5rem;
+  }
+  
+  .btn-danger {
+    margin-top: 20px;
+  }
+  

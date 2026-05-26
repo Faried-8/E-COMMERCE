@@ -1,0 +1,128 @@
+<app-top-banner></app-top-banner>
+<app-navbar></app-navbar>
+
+
+<div class="container cart-container">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="#">Home</a></li>
+      <li class="breadcrumb-item active" aria-current="page">Cart</li>
+    </ol>
+  </nav>
+
+  <!-- Cart Table -->
+  <table class="table table-borderless">
+    <thead>
+      <tr>
+        <th>Product</th>
+        <th>Price</th>
+        <th>Quantity</th>
+        <th>Subtotal</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Loop through cart products -->
+      <tr *ngFor="let product of cartProducts">
+        <td>
+          <img [src]="product.details.gallary.gallary_name" alt="{{ product.details.name }}" style="width: 60px; height: 60px;">
+          {{ product.details.name }}
+        </td>
+        <td>${{ product.details.price_after }}</td>
+        <td>
+          <select class="form-select" style="width: 80px;" [(ngModel)]="product.qty" (change)="onQuantityChange(product, $event)">
+            <option *ngFor="let quantity of [1, 2, 3, 4, 5]" [value]="quantity">{{ quantity }}</option>
+          </select>
+        </td>
+        <td>${{ calculateSubtotal(product) }}</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Cart Actions -->
+  <div class="d-flex justify-content-between align-items-center">
+    <a href="#" class="btn btn-outline-secondary">Return To Shop</a>
+    <a href="#" class="btn btn-outline-secondary">Update Cart</a>
+  </div>
+
+  <!-- Coupon and Cart Summary -->
+  <div class="row mt-4">
+    <div class="col-md-6">
+      <!-- Apply Coupon -->
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Coupon Code">
+        <button class="btn-apply-coupon">Apply Coupon</button>
+      </div>
+    </div>
+    <div class="col-md-6 text-end">
+      <!-- Cart Total Box -->
+      <div class="container my-5">
+        <div class="card p-3 shadow-sm" style="max-width: 400px; margin: auto;">
+          <h5 class="card-title text-start">Cart Total</h5>
+          <hr>
+          <div class="row mb-3">
+            <div class="col text-start">
+              <strong>Subtotal:</strong>
+            </div>
+            <div class="col text-end">
+              $<span id="subtotal">{{ totalCart }}</span>
+            </div>
+          </div>
+          <div class="row mb-3">
+            <div class="col text-start">
+              <strong>Shipping:</strong>
+            </div>
+            <div class="col text-end">
+              Free
+            </div>
+          </div>
+          <hr>
+          <div class="row mb-4">
+            <div class="col text-start">
+              <strong>Total:</strong>
+            </div>
+            <div class="col text-end">
+              $<span id="total">{{ totalCart }}</span>
+            </div>
+          </div>
+          <button class="btn btn-danger w-100">Proceed to checkout</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<app-footer-section></app-footer-section>
+
+  <!--  <div class="container my-5">
+          <div class="card p-3 shadow-sm" style="max-width: 400px; margin: auto;">
+            <h5 class="card-title text-start">Cart Total</h5>
+            <hr>
+            <div class="row mb-3">
+              <div class="col text-start">
+                <strong>Subtotal:</strong>
+              </div>
+              <div class="col text-end">
+                $<span id="subtotal">{{ subtotal }}</span>
+              </div>
+            </div>
+            <div class="row mb-3">
+              <div class="col text-start">
+                <strong>Shipping:</strong>
+              </div>
+              <div class="col text-end">
+                {{ shippingCost === 0 ? 'Free' : '$' + shippingCost }}
+              </div>
+            </div>
+            <hr>
+            <div class="row mb-4">
+              <div class="col text-start">
+                <strong>Total:</strong>
+              </div>
+              <div class="col text-end">
+                $<span id="total">{{ subtotal + shippingCost }}</span>
+              </div>
+            </div>
+            <button class="btn btn-danger w-100" (click)="proceedToCheckout()">Proceed to checkout</button>
+          </div>
+        </div> -->

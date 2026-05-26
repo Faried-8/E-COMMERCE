@@ -1,0 +1,359 @@
+
+<div class="">
+<!-- https://images.unsplash.com/photo-1610482650877-a580984185a0?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=1500&q=80 -->
+ <!-- https://i.pinimg.com/originals/cd/5e/a9/cd5ea9e79bc548e3e9ddd27dc6b2f400.png -->
+<app-top-banner></app-top-banner>
+<app-navbar></app-navbar>
+  <!-- first section -->
+<div class="container">
+  <div class="d-flex d-flex-wrap">
+     <!-- 30% Column -->
+     <div class="flex-shrink-0 text-white p-3" style="flex-basis: 30%;">
+      <!-- 30% Width Column -->
+       <!-- Display main categories with subcategories -->
+<ul class="list-unstyled list-group d-flex mt-4 ">
+  <li *ngFor="let ListCategory of ListCategories"
+      class="list-group-item list-group-item-action d-flex justify-content-between fs-3"
+      (click)="selectCategory(ListCategory.id)">
+    <strong>{{ ListCategory.name }}</strong>
+    <span class="text-muted fw-bold ms-auto flex-end">&gt;</span>
+
+    <!-- Nested subcategories for the selected category -->
+    <ul *ngIf="ListCategory.id === selectedCategoryId && isSidebarVisible" class="mt-2 ms-4 ">
+      <li *ngFor="let subcategory of ListCategory.subcategories"
+          class="list-group-item list-group-item-action d-flex justify-content-between fs-4">
+
+
+          <!-- <img [src]="subcategory.image"  alt="{{ subcategory.name }}" width="300" height="200"  class="subcategory-icon me-2" />  -->
+        <!-- <img [src]="category.image" alt="{{ category.name }}" class="category-icon img-fluid" width="300" height="200" *ngIf="category.image" /> -->
+
+        {{ subcategory.name }} <!-- Display subcategory name -->
+        <!-- <a [routerLink]="['/subcategory', subcategory.id]" class="text-decoration-none"> -->
+
+      </li>
+    </ul>
+  </li>
+</ul>
+      
+      
+      </div>
+
+    <div class="flex-grow-1 p-3 bio">
+      <!-- 70% -->
+      <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+          <button *ngFor="let image of carouselImages; let i = index" 
+        type="button" 
+        data-bs-target="#carouselExampleIndicators" 
+        [class.active]="i === 0" 
+        class="rounded-circle" 
+        [attr.data-bs-slide-to]="i" 
+        [attr.aria-label]="'Slide ' + (i + 1)"></button>
+
+        </div>
+        <div class="carousel-inner" id="parent-HW">
+          <div *ngFor="let image of carouselImages; let i = index" 
+               class="carousel-item styleH-W" 
+               [class.active]="i === 0">
+            <img [src]="image.imageUrl" class="d-block w-100 h-100" alt="{{ image.title }}">
+          </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+      
+    </div>
+  </div>
+</div>
+
+<!-- 2nd section -->
+
+<div class="container mt-5">
+  <!-- Categories -->
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h3>Browse By Category</h3>
+    </div>
+  </div>
+
+ 
+
+  <div class="row justify-content-center mt-4" *ngIf="topCategories && topCategories.length > 0">
+    <div class="col-12 d-flex justify-content-center" *ngIf="flag">
+      <!-- <img src="https://mir-s3-cdn-cf.behance.net/project_modules/disp/585d0331234507.564a1d239ac5e.gif" alt=""> -->
+  </div>
+  <ng-container *ngIf="!flag" class="">
+
+    <div *ngFor="let category of topCategories" class="col-md-2 ">
+      <div class="category-card ">
+        <img [src]="category?.image" alt="{{ category?.category_data?.category_name }}" class="category-icon img-fluid" *ngIf="category?.image" />
+  
+                                                              <!--Product By Category-->
+        <p class="category-title text-center" routerLink="/category/{{category.id}}">
+          {{ category?.category_data?.category_name || 'Unknown Category' }}
+        </p>
+      </div>
+    </div>
+  </ng-container>
+    
+  </div>
+  
+  
+  
+
+  <!-- Feature Section -->
+  <div class="row mt-5 text-center">
+    <div class="col-md-4">
+      <div class="feature-icon">
+        <i class="fas fa-truck"></i>
+      </div>
+      <p class="feature-title">FREE AND FAST DELIVERY</p>
+      <p class="feature-text">Free delivery for all orders over $140</p>
+    </div>
+    <div class="col-md-4">
+      <div class="feature-icon">
+        <i class="fas fa-headphones-alt"></i>
+      </div>
+      <p class="feature-title">24/7 CUSTOMER SERVICE</p>
+      <p class="feature-text">Friendly 24/7 customer support</p>
+    </div>
+    <div class="col-md-4">
+      <div class="feature-icon">
+        <i class="fas fa-shield-alt"></i>
+      </div>
+      <p class="feature-title">MONEY BACK GUARANTEE</p>
+      <p class="feature-text">We return money within 30 days</p>
+    </div>
+  </div>
+</div>
+
+<app-footer-section></app-footer-section>
+</div>
+
+
+   
+
+<!-- 
+<app-top-banner></app-top-banner>
+<app-navbar></app-navbar>
+
+ first section 
+<div class="container">
+  <div class="d-flex d-flex-wrap">
+      30% Column
+     <div class="flex-shrink-0  text-white p-3" style="flex-basis: 30%;">
+       30% Width Column 
+        <ul class="list-unstyled list-group d-flex">
+        <a class="list-group-item list-group-item-action d-flex justify-content-between fs-3">Woman's Fashion <span class="text-muted fw-bold ms-auto flex-end">&gt;</span></a>
+        <a class="list-group-item list-group-item-action fs-3 d-flex justify-content-between">Men's Fashion <span class="text-muted fw-bold ms-auto flex-end">&gt;</span></a>
+        <a class="list-group-item list-group-item-action fs-3">Electronics</a>
+        <a class="list-group-item list-group-item-action fs-3">Home & Lifestyle</a>
+        <a class="list-group-item list-group-item-action fs-3">Medicine</a>
+        <a class="list-group-item list-group-item-action fs-3">Sports & Outdoor</a>
+        <a class="list-group-item list-group-item-action fs-3">Baby's & Toys</a>
+        <a class="list-group-item list-group-item-action fs-3">Groceries & Pets</a>
+        <a class="list-group-item list-group-item-action fs-3">Health & Beauty</a>
+
+       </ul> 
+       <ul class="list-unstyled list-group d-flex">
+        <li *ngFor="let category of categories" class="list-group-item list-group-item-action d-flex justify-content-between fs-3">
+          {{ category.name }}
+          <span class="text-muted fw-bold ms-auto flex-end">&gt;</span>
+        </li>
+      </ul>
+      </div>
+
+    <div class="flex-grow-1 p-3 bio">
+       70%
+      <div id="carouselExampleIndicators" class="carousel slide">
+        <div class="carousel-indicators">
+          <button type="button" data-bs-target="#carouselExampleIndicators" class="active rounded-circle" data-bs-slide-to="0"  aria-current="true" aria-label="Slide 1"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" class="rounded-circle" data-bs-slide-to="1" aria-label="Slide 2"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" class="rounded-circle" data-bs-slide-to="2" aria-label="Slide 3"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" class="rounded-circle" data-bs-slide-to="3" aria-label="Slide 4"></button>
+          <button type="button" data-bs-target="#carouselExampleIndicators" class="rounded-circle" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        </div>
+        <div class="carousel-inner" id="parent-HW">
+
+          <div class="carousel-item active styleH-W">
+            <img src="iPhone-14-Pro-Everything-You-Need-To-Know.jpg" class="d-block w-100 h-100" alt="...">
+          </div>
+          <div class="carousel-item styleH-W">
+                                                                                 object-fit-contain        object-fit-cover          h-75        w-25   img-fluid 
+            <img src="watch-AliExpress.png" class="d-block w-100 h-100" alt="..." style="height: 200px;">
+          </div>
+          <div class="carousel-item styleH-W" style="height: 530px;
+          width: 56rem;">
+            <img src="new-ps5-advert-highlights-a-console-centered-around-the-games.jpg" class="d-block w-100" alt="...">
+          </div>
+          <div class="carousel-item styleH-W">
+            <img src="i-phone-AliExpress.png" class="d-block w-100 h-100" alt="...">
+          </div>
+
+          <div class="carousel-item styleH-W">
+            <img src="EarBuds-AliExpress.png" class="d-block w-100 h-100" alt="...">
+          </div>
+
+           public/EarBuds-AliExpress.png 
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+          <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+          <span class="carousel-control-next-icon" aria-hidden="true"></span>
+          <span class="visually-hidden">Next</span>
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+ 2nd section 
+
+<div class="container mt-5">
+   Categories Section 
+  <div class="row">
+    <div class="col-md-12 text-center">
+      <h3>Browse By Category</h3>
+    </div>
+  </div>
+
+  <div class="row justify-content-center mt-4">
+    <div class="col-md-2">
+      <div class="category-card">
+        <i class="category-icon fas fa-mobile-alt"></i>
+        <p class="category-title">Phones</p>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="category-card">
+        <i class="category-icon fas fa-desktop"></i>
+        <p class="category-title">Computers</p>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="category-card">
+        <i class="category-icon fas fa-watch"></i>
+        <p class="category-title">SmartWatch</p>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="category-card">
+        <i class="category-icon fas fa-camera"></i>
+        <p class="category-title">Camera</p>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="category-card">
+        <i class="category-icon fas fa-headphones"></i>
+        <p class="category-title">HeadPhones</p>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="category-card">
+        <i class="category-icon fas fa-gamepad"></i>
+        <p class="category-title">Gaming</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="row justify-content-center mt-3">
+    <div class="col-md-2">
+      <div class="category-card">
+        <i class="category-icon fas fa-mobile-alt"></i>
+        <p class="category-title">Phones</p>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="category-card">
+        <i class="category-icon fas fa-desktop"></i>
+        <p class="category-title">Computers</p>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="category-card">
+        <i class="category-icon fas fa-watch"></i>
+        <p class="category-title">SmartWatch</p>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="category-card">
+        <i class="category-icon fas fa-camera"></i>
+        <p class="category-title">Camera</p>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="category-card">
+        <i class="category-icon fas fa-headphones"></i>
+        <p class="category-title">HeadPhones</p>
+      </div>
+    </div>
+    <div class="col-md-2">
+      <div class="category-card">
+        <i class="category-icon fas fa-gamepad"></i>
+        <p class="category-title">Gaming</p>
+      </div>
+    </div>
+  </div>
+
+   Feature Section 
+  <div class="row mt-5 text-center">
+    <div class="col-md-4">
+      <div class="feature-icon">
+        <i class="fas fa-truck"></i>
+      </div>
+      <p class="feature-title">FREE AND FAST DELIVERY</p>
+      <p class="feature-text">Free delivery for all orders over $140</p>
+    </div>
+    <div class="col-md-4">
+      <div class="feature-icon">
+        <i class="fas fa-headphones-alt"></i>
+      </div>
+      <p class="feature-title">24/7 CUSTOMER SERVICE</p>
+      <p class="feature-text">Friendly 24/7 customer support</p>
+    </div>
+    <div class="col-md-4">
+      <div class="feature-icon">
+        <i class="fas fa-shield-alt"></i>
+      </div>
+      <p class="feature-title">MONEY BACK GUARANTEE</p>
+      <p class="feature-text">We return money within 30 days</p>
+    </div>
+  </div>
+</div>
+   
+<app-footer-section></app-footer-section>
+old unordered list
+
+ <ul class="list-unstyled list-group d-flex">
+        <li *ngFor="let category of categories" class="list-group-item list-group-item-action d-flex justify-content-between fs-3" >
+          {{ category.name }}
+          <span class="text-muted fw-bold ms-auto flex-end">&gt;</span>
+        </li>
+      
+        <li *ngFor="let ListCategory of ListCategories" *ngIf="isSubmitted && isClicked" (click)="displayList()"
+        class="list-group-item list-group-item-action d-flex justify-content-between fs-3">
+          <strong>{{ ListCategory.id }}</strong>
+          <ul>
+            <li *ngFor="let subcategory of ListCategory.subcategories" *ngIf="ListCategory.id && isSidebarVisible">
+              {{ subcategory.name }
+               {{subcategory.id}} 
+            </li>
+          </ul>
+        </li>
+        <
+          *ngIf="ListCategory.id =="
+         
+        
+        
+
+        
+       </ul>
+ -->

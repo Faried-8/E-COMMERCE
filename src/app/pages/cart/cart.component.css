@@ -1,0 +1,27 @@
+.cart-container {
+    max-width: 900px;
+    margin: 50px auto;
+    padding: 20px;
+  }
+
+  .table th, .table td {
+    vertical-align: middle;
+  }
+
+  .cart-total-box {
+    border: 1px solid #ddd;
+    padding: 20px;
+    border-radius: 10px;
+  }
+
+  .btn-apply-coupon, .btn-checkout {
+    background-color: #e74c3c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+  }
+
+  .btn-apply-coupon:hover, .btn-checkout:hover {
+    background-color: #c0392b;
+  }

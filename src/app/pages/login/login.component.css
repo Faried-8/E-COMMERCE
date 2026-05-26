@@ -1,0 +1,201 @@
+.form-container {
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  .form-container h2 {
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  .btn-red {
+    background-color: #e63946;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+  }
+  .btn-red:hover {
+    background-color: #d62839;
+  }
+  .text-link {
+    color: #e63946;
+    text-decoration: none;
+  }
+  .text-link:hover {
+    text-decoration: underline;
+  }
+  /* Custom */
+
+
+  .all{
+    height: 1200px;
+    background:url('http://codingstella.com/wp-content/uploads/2024/01/download-5.jpeg');
+  }
+  /* @import url('https://fonts.googleapis.com/css2?family=Montserrat&display=swap'); */
+  
+  
+  @keyframes animateBg {
+    100% {
+      filter:hue-rotate(360deg);
+    }
+  }
+  .login-box {
+    /* position: relative;
+    width: 400px;
+    height: 450px; */
+    background: transparent;
+    border-radius: 15px;
+    border: 2px solid rgba(255,255,255,.5);
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    backdrop-filter: blur(15px);
+    /* height: 38rem; */
+  }
+  h2 {
+    font-size:2em;
+    color:#fff;
+    text-align:center;
+  }
+  .input-box {
+    /* position:relative; */
+    /* width:310px; */
+    /* margin:30px 0; */
+    border-bottom:1px solid #fff;
+  }
+  .input-box label {
+    position:absolute;
+    top:50%;
+    left:5px;
+    transform:translateY(-50%);
+    font-size:1em;
+    color:#fff;
+    pointer-events:none;
+    transition:.5s;
+  }
+  .input-box input:focus  ~ label,
+  .input-box input:valid  ~ label {
+    top:-5px;
+  }
+  .input-box input {
+    width:100%;
+    height:50px;
+    background:transparent;
+    border:none;
+    outline:none;
+    font-size:1em;
+    color:#fff;
+    padding:0 35px 0 5px;
+  }
+  .input-box .icon {
+    position:absolute;
+    right:8px;
+    top:50%;
+    color: #fff;
+    transform: translateY(-50%);
+  }
+  .remember-forgot {
+    margin:-15px 0 15px;
+    font-size:.9em;
+    color:#fff;
+    display:flex;
+    justify-content:space-between;
+  }
+  .remember-forgot label input {
+    margin-right:3px;
+  }
+  .remember-forgot a {
+    color:#fff;
+    text-decoration:none;
+  }
+  .remember-forgot a:hover {
+    text-decoration:underline;
+  }
+  button {
+    width:100%;
+    height:40px;
+    background-color:#fff;
+    border:none;
+    border-radius:40px;
+    cursor:pointer;
+    font-size:1em;
+    color:#000;
+    
+    /* font-weight;500 px; */
+  }
+  .register-link {
+    font-size:.9em;
+    color:#fff;
+    text-align:center;
+    margin:25px 0 10px;
+  }
+  .register-link p a {
+    color:#fff;
+    text-decoration:none;
+    font-weight:600;
+  }
+  .register-link p a:hover {
+    text-decoration:underline;
+  }
+  @media (max-width:500px) {
+    .login-box {
+      width:100%;
+      height:100vh;
+      border:none;
+      border-radius:0;
+    }
+    .input-box {
+      width:290px;
+    }
+  } 
+  
+  /* new custom */
+  
+    .custom-input {
+      border: none;
+      border-bottom: 1px solid #aaa;
+      outline: none;
+      width: 100%;
+      padding: 10px 0;
+      font-size: 16px;
+      background-color: transparent;
+      color: #333;
+  }
+  
+  .custom-input::placeholder {
+      color: #777;
+      font-size: 1.2rem;
+      transition: 0.3s ease all;
+      font-style: italic;
+  }
+  
+  .custom-input:focus::placeholder {
+      color: #aaa;
+      font-size: 0.9rem;
+      font-weight: bold;
+  }
+  
+  .input-wrapper {
+      margin: 20px 0;
+  }
+  .ImgHover {
+    display: inline-block;
+    perspective: 1000px; /* Creates a 3D perspective */
+  }
+  
+  .ImgHover img {
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+    transform-origin: center center; /* Origin point for 3D transform */
+    /* box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1); */
+  }
+  
+  .ImgHover:hover img {
+    transform: rotateY(15deg) rotateX(5deg) translateY(-10px) scale(1.05);
+    /* box-shadow: 0 20px 30px rgba(0, 0, 0, 0.2); */
+  }
+  
+  .Padding2_0{
+    padding: 2% 0%;
+  }

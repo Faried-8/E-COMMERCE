@@ -1,0 +1,111 @@
+<app-top-banner></app-top-banner>
+<app-navbar></app-navbar>
+
+<div class="container text-capitalize">
+    <div class="row d-flex justify-content-center">
+        <p class="col-6 align-items-start justify-content-start"><span class="fw-normal">Home</span> / My Account</p>
+        <!-- <p class="col-6 row align-items-end justify-content-end">Welcome! {{res.data.first_name}}</p> -->
+                <p class="col-6 row align-items-end justify-content-end">Welcome! ...</p>
+    </div>
+
+    <div class="row">
+ <!-- left section -->
+    <div class=" col-4  row d-flex align-items-start justify-content-start">
+        <ul class="list-unstyled">
+            <h3 class="bold">Manage My Account</h3>
+            <!-- ms-3: dah bi add 1rem of left margin. -->
+            <input type="file" (click)="handleClick()">
+            <li class="fw-normal list-unstyled ms-5 m-2"> <a routerLink="/account">My Profile</a> </li>
+            <li class="fw-normal list-unstyled ms-5 m-2"> <a routerLink="/Address">Address Book</a> </li>
+            <li class="fw-normal list-unstyled ms-5 m-2"> <a>My Payment Options</a> </li>
+        </ul>
+
+        <ul>
+            <h3 class="bold">My Orders</h3>
+            <!-- ms-3: dah bi add 1rem of left margin -->
+            <li class="fw-normal list-unstyled ms-5 m-2"> <a>My Returns</a> </li>
+            <li class="fw-normal list-unstyled ms-5 m-2"> <a>My Cancellations</a> </li>
+        </ul>
+
+        <ul>
+            <h3 class="bold">My WishList</h3>            
+        </ul>
+    </div>
+
+    <div class="col-8">
+        <div class="form-container">
+            <h2 class="mb-4 text-danger">Edit Your Profile</h2>
+        
+            <div class="form-container">
+                <form>
+                  <div class="row">
+                    <!-- First Name -->
+                    <div class="col-md-6 mb-3">
+                      <label for="firstName" class="form-label">First Name</label>
+                      <input type="text" class="form-control" id="firstName" placeholder="Md" value="Md">
+                    </div>
+            
+                    <!-- Last Name -->
+                    <div class="col-md-6 mb-3">
+                      <label for="lastName" class="form-label">Last Name</label>
+                      <input type="text" class="form-control" id="lastName" placeholder="kk" value="kk">
+                    </div>
+                  </div>
+            
+                  <div class="row">
+                    <!-- Email -->
+                    <div class="col-md-6 mb-3">
+                      <label for="email" class="form-label">Email</label>
+                      <input type="email" class="form-control" id="email" placeholder="ex@gmail.com" value="ex@gmail.com">
+                    </div>
+            
+                    <!-- Phone -->
+                    <div class="col-md-6 mb-3">
+                      <label for="phone" class="form-label">Phone</label>
+                      <input type="tel" class="form-control" id="phone" placeholder="01254433455" value="01254433455">
+                    </div>
+                  </div>
+                  
+                  <!-- Submit Button -->
+                  <div class="row">
+                    <div class="col-12 text-end">
+                      <button type="submit" class="btn btn-danger">Save Changes</button>
+                    </div>
+                  </div>
+
+                  <h4 class="mb-4">Password Changes</h4>
+
+                  <!-- Current Password -->
+                  <div class="mb-3">
+                    <label for="currentPassword" class="form-label">Current Password</label>
+                    <input type="password" class="form-control" id="currentPassword" placeholder="Current Password">
+                  </div>
+            
+                  <!-- New Password -->
+                  <div class="mb-3">
+                    <label for="newPassword" class="form-label">New Password</label>
+                    <input type="password" class="form-control" id="newPassword" placeholder="New Password">
+                  </div>
+            
+                  <!--  re enter Password -->
+                  <div class="mb-3">
+                    <label for="confirmPassword" class="form-label">Confirm New Password</label>
+                    <input type="password" class="form-control" id="confirmPassword" placeholder="Confirm New Password">
+                  </div>
+            
+                  <div class="text-end">
+                    <button type="submit" class="btn btn-danger">Save Changes</button>
+                  </div>
+                </form>
+              </div>
+          </div>
+        
+
+    </div>
+    </div>
+   
+
+</div>
+
+
+<app-footer-section></app-footer-section>

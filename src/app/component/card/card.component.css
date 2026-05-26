@@ -1,0 +1,50 @@
+.product-card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    filter: grayscale(50%);
+
+  }
+.product-card:hover{
+      filter: grayscale(0%);
+}
+  .product-card .badge {
+    font-size: 12px;
+  }
+  
+  .product-card .btn-outline-secondary {
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+  }
+  
+  .product-card .color-options div {
+    cursor: pointer;
+  }
+
+  .card{
+    width: 385px;
+    background-color: #a9a97e;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+    background: rgba(255, 255, 255, 0.27);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+  }
+  
+  .card:hover{
+      transform: scale3d(1.2, 1.2, 1.5);
+      box-shadow: 10px 10px 5px lightblue;
+      z-index: 1111;
+  }
+  
+  .card:hover{
+    transform: scale3d(1.2, 1.2, 1.5);
+    box-shadow: 10px 10px 5px lightblue;
+    z-index: 1111;
+  }
+  
+  
+  

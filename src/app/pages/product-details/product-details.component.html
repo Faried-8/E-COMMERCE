@@ -1,0 +1,114 @@
+
+  <app-top-banner></app-top-banner>
+  <app-navbar></app-navbar>
+  <!-- Loading From ProductByCategory(<=) to Product-Details(<=) -->
+  <div class="sk-cube-grid col-12" *ngIf="!flag">
+    <div class="sk-cube sk-cube1"></div>
+    <div class="sk-cube sk-cube2"></div>
+    <div class="sk-cube sk-cube3"></div>
+    <div class="sk-cube sk-cube4"></div>
+    <div class="sk-cube sk-cube5"></div>
+    <div class="sk-cube sk-cube6"></div>
+    <div class="sk-cube sk-cube7"></div>
+    <div class="sk-cube sk-cube8"></div>
+    <div class="sk-cube sk-cube9"></div>
+  </div>
+
+  <div class="container mt-5 mb-5" *ngIf="flag">
+    <div class="row">
+      <!-- Breadcrumb Navigation top-left -->
+      <nav aria-label="breadcrumb" class="mb-4">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a class="text-decoration-none text-black">Account</a></li>
+          <li class="breadcrumb-item"><a class="text-decoration-none text-black">{{ productDetails?.vendor?.name }}</a></li>
+          <li class="breadcrumb-item active text-black" aria-current="page">{{ productDetails?.name }}</li>
+        </ol>
+      </nav>
+
+      <div class="col-md-6">
+        <div class="row">
+          <div class="col-3">
+            <!-- Thumbnail Images -->
+            <div class="row">
+              <img *ngFor="let image of productDetails?.gallery" [src]="image.name" alt="Product Image" class="img-fluid mb-3 Hover" (click)="changeImage(image.name)" />
+            </div>
+          </div>
+          <div class="col product-image-container Hover">
+            <!-- Main Product Image -->
+            <img [src]="mainImage" alt="{{ productDetails?.name }}" class="img-fluid product-image" />
+          </div>
+        </div>
+      </div>
+
+      <!-- Product Details Right Section -->
+      <div class="col-md-6 text-black">
+        <h2>{{ productDetails?.name }}</h2>
+        <div class="d-flex align-items-center mb-2">
+          <!-- Star Rating -->
+          <span class="me-2">
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star-fill text-warning"></i>
+            <i class="bi bi-star" [ngClass]="{'text-secondary': !productDetails?.rating || productDetails?.rating < 5}"></i>
+          </span>
+          <span class="text-muted">({{ productDetails?.is_liked }} Reviews)</span>
+          <span class="text-success ms-3" *ngIf="productDetails?.stock > 0">In Stock</span>
+        </div>
+
+        <h3 class="mt-3">${{ productDetails?.price }}</h3>
+        <p>{{ productDetails?.detail?.desc }}</p>
+
+        <hr />
+
+        <!-- Colour Selection -->
+        <div class="d-flex align-items-center mb-3">
+          <label for="color" class="me-3 fw-bold">Colours:</label>
+          <button *ngFor="let color of colors" class="btn btn-outline-secondary btn-sm me-2 rounded-circle" [style.background-color]="color.hex_color"></button>
+        </div>
+
+        <!-- Quantity and Buy Now Button -->
+        <div class="d-flex align-items-center mb-3">
+          <div class="input-group me-3" style="width: 120px;">
+            <button class="btn btn-outline-secondary text-black" type="button" (click)="decrementQuantity()">
+              -
+            </button>
+            <input type="text" class="form-control text-center" style="width: 40px;" [(ngModel)]="selectedQuantity" />
+            <button class="btn btn-outline-secondary" type="button" (click)="incrementQuantity()">
+              +
+            </button>
+          </div>
+          
+          <button class="btn btn-danger me-3" id="BuyPad" (click)="addToCart(productDetails?.id)">Buy Now</button>
+          <button class="btn btn-outline-secondary" style="transform:translate(220px, 0px)">
+            <i class="bi bi-heart"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- Related Items Section -->
+    <div class="row">
+      <!-- Loop through related products -->
+      <div *ngFor="let product of relatedProducts" class="col-md-3 mb-4">
+        <div class="card h-100">
+          <div class="position-relative">
+            <img [src]="product.image" class="card-img-top" alt="{{ product.name }}">
+            <span class="badge bg-danger position-absolute top-0 start-0 m-2">-{{ product.percentage }}%</span>
+            <button class="btn btn-outline-secondary position-absolute top-0 end-0 m-2">
+              <i class="bi bi-heart"></i>
+            </button>
+          </div>
+          <div class="card-body text-center">
+            <h6 class="card-title">{{ product.name }}</h6>
+            <p class="text-muted text-decoration-line-through">${{ product.price }}</p>
+            <p class="fw-bold text-danger">${{ product.price_after }}</p>
+            <!-- Pass the product.id to addToCart when the button is clicked -->
+            <button class="btn btn-dark w-100" (click)="addToCart(product.id)">Add to Cart</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <app-footer-section></app-footer-section>
+

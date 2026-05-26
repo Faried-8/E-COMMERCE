@@ -1,0 +1,130 @@
+<div class="container-fluid">
+    <div class="row">
+        <!-- Sidebar -->
+        <nav class="col-md-3 col-lg-2 d-md-block bg-light sidebar">
+            <div class="position-sticky pt-3">
+                <div class="profile-header text-center">
+                    <!-- Bind the img src to a variable that will hold the image URL -->
+                    <img [src]="" class="rounded-circle mb-2" alt="Profile Image" width="150px" height="150px">
+                    <h4>Mostafa Faried</h4>
+                  </div>
+                <ul class="nav flex-column">
+                    <li class="nav-item">
+                        <a class="nav-link active" >
+                            <span data-feather="home"></span>
+                            My Profile
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" >
+                            <span data-feather="lock"></span>
+                            Change password
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" >
+                            <span data-feather="book"></span>
+                            Addresses
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" >
+                            <span data-feather="clock"></span>
+                            Activity History
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" >
+                            <span data-feather="tag"></span>
+                            My Coupons
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" >
+                            <span data-feather="star"></span>
+                            My Points
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" >
+                            <span data-feather="credit-card"></span>
+                            My Wallet
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" >
+                            <span data-feather="users"></span>
+                            Your Communities
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" >
+                            <span data-feather="refresh-cw"></span>
+                            Refund requests
+                        </a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" >
+                            <span data-feather="message-circle"></span>
+                            My complaints
+                        </a>
+                    </li>
+                </ul>
+                <div class="logout">
+                    <a  class="nav-link text-danger">
+                        <span data-feather="log-out"></span>
+                        Logout
+                    </a>
+                </div>
+            </div>
+        </nav>
+
+        <!-- Content -->
+        <main class="col-md-9 ms-sm-auto col-lg-10 px-md-4">
+            <!-- Addresses -->
+            <div class="pt-3 pb-2 mb-3 border-bottom">
+                <h2>Addresses</h2>
+            </div>
+            <div class="row">
+                
+                <!-- + Button -->
+                <div class="card address-card col-4 d-flex mx-5 align-items-center justify-content-center text-center">
+                    <div class="card-body">
+                        <h5 class="card-title text-center">Add Address</h5>
+                        <button class="btn btn-outline-primary text-center" type="button" routerLink="/add-address">+</button>
+                    </div>
+                </div>
+    
+                <!-- Default Card -->
+                <div class="card card-custom">
+                    <div class="card-header">Default</div>
+                    <div class="card-body">
+                        <p class="address-details">
+                            <strong>naser street</strong><br>
+                            Test Suburb<br>
+                            Address name //20B<br>
+                            Mauritania -<br>
+                            <strong>Phone number:</strong> +2225515613
+                        </p>
+                        <div>
+                            <a class="btn-edit">Edit</a> |
+                            <a  class="btn-remove">Remove</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="card card-custom">
+                    <div class="card-header">Default</div>
+                  <!-- <div class="body p-3">
+                    <p class="mb-2"><strong>{{ address.street_address }}</strong></p>
+                    <p class="mb-2">{{ address.suburb }}</p>
+                    <p class="mb-2">{{ address.building_number + ' / ' + address.floor_number + ' / ' + address.flat_number }}</p>
+                    <p class="mb-2">{{ address.country_id.country_name + ' - ' + address.state_id.name + ' - ' + address.cityInfo.name_en}}</p>
+                    <p class="mb-2">Phone number: {{ address.phone }}</p>
+                  </div>       -->
+                  
+                </div>
+            </div>
+        </main>
+    </div>
+</div>

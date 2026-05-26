@@ -1,0 +1,299 @@
+#h2Download{
+    padding: 0% 24%;
+}
+
+#P_Download{
+    padding: 0% 24%;
+}
+
+.form-container {
+    max-width: 400px;
+    margin: 50px auto;
+    background-color: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+  }
+  .form-container h2 {
+    font-weight: bold;
+    margin-bottom: 15px;
+  }
+  .btn-red {
+    background-color: #e63946;
+    color: white;
+    font-weight: bold;
+    padding: 10px;
+  }
+  .btn-red:hover {
+    background-color: #d62839;
+  }
+  .text-link {
+    color: #e63946;
+    text-decoration: none;
+  }
+  .text-link:hover {
+    text-decoration: underline;
+  }
+
+  /* custom */
+
+  .col-30 {
+    flex: 0 0 30%; /* Flex-grow: 0 (no growing), Flex-shrink: 0 (no shrinking), Flex-basis: 30% */
+  }
+  
+  .flex-grow-1 {
+    flex: 0 0 70%; /* Make the second column 70% */
+  }
+
+  *{
+    box-sizing: border-box;
+}
+.bio{
+  height: auto;
+  width: auto;
+}
+
+.styleH-W{
+  height: 530px;
+    width: 56rem;
+}
+
+
+.carousel-indicators [data-bs-target] {
+  width: 15px;  /* Set width to create a circle */
+  height: 15px; /* Set height to create a circle */
+  border-radius: 50%; /* Make the button circular */
+  background-color: #007bff; /* Set your preferred color */
+  border: 2px solid white; /* White border with a defined width */
+  transition: background-color 0.3s ease, transform 0.3s ease; /* Smooth transition for hover and active states */
+}
+
+.carousel-indicators [data-bs-target]:hover {
+  background-color: #0056b3; /* Darken on hover */
+  transform: scale(1.2); /* Scale up slightly on hover for effect */
+}
+
+.carousel-indicators .active {
+  background-color: #dc3545; /* Active state color */
+  border-color: #ffffff; /* White border for active state */
+  transform: scale(1.4); /* Increase size for active indicator */
+}
+
+.category-card {
+  border: 1px solid #e0e0e0;
+  padding: 20px;
+  text-align: center;
+  transition: box-shadow 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.category-card:hover {
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.category-icon {
+  font-size: 40px;
+  margin-bottom: 10px;
+}
+
+.feature-icon {
+  color: white;
+  background-color: #000000;
+  border: 9px solid lightgray; 
+
+  width: 4.5rem;
+  height: 4.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  margin-bottom: 15px;
+  transition: transform 0.3s ease-in-out;
+  margin: 0% 41%;
+  transform: translate(7px, -8px);
+}
+
+.feature-icon:hover {
+  transform: scale(1.1);
+}
+
+.category-title {
+  font-size: 18px;
+  font-weight: 500;
+}
+
+.feature-title {
+  font-weight: bold;
+  text-align: center;
+}
+
+.feature-text {
+  text-align: center;
+  font-size: 14px;
+}
+
+.carousel-arrows {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.category-card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  background-color: #fff; /* Add a white background */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional: Add box shadow for better look */
+  border-radius: 8px; /* Rounded corners */
+  overflow: hidden; /* Prevent overflow */
+}
+
+.category-icon {
+  width: 100%; /* Make image fit the width of the container */
+  height: 150px; /* Fixed height */
+  object-fit: cover; /* Maintain aspect ratio and crop image if necessary */
+  border-radius: 8px; /* Optional: Same rounded corners */
+}
+
+.category-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 10px;
+  color: #333; /* Darker text color */
+}
+
+.img-fluid {
+  max-width: 100%; /* Ensure the image is responsive */
+  height: auto; /* Adjust height based on width */
+}
+
+.category-card {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin: 10px;
+  text-align: center;
+  /* background-color: #fff; */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+  overflow: hidden;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth transition */
+}
+
+.category-card:hover {
+  transform: translateY(-5px) scale(1.05); /* Move up and slightly enlarge the card */
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Increase shadow on hover */
+}
+
+.category-icon {
+  width: 100%;
+  height: 150px;
+  object-fit: cover; /* Maintain aspect ratio */
+  border-radius: 8px;
+  transition: transform 0.3s ease; /* Smooth transition */
+}
+
+.category-card:hover .category-icon {
+  transform: scale(1.1); /* Slightly enlarge image on hover */
+}
+
+.category-title {
+  font-size: 1.2rem;
+  font-weight: bold;
+  margin-top: 10px;
+  /* color: #ffffff; */
+  transition: color 0.3s ease; /* Smooth color transition */
+}
+
+.category-card:hover .category-title {
+  color: #007bff; /* Change title color on hover */
+}
+/* Initial state for subcategory list - hidden */
+.subcategory-list {
+  max-height: 0; /* Collapsed height */
+  overflow: hidden; /* Hide overflow */
+  opacity: 0; /* Fully transparent */
+  transform: scaleY(0); /* Scale to 0 on the Y-axis */
+  transition: max-height 1s ease, opacity 1s ease, transform 1s ease; /* Smooth transition with 1s duration */
+  transition-delay: 0s; /* No delay initially */
+}
+
+/* When the subcategory list is visible */
+.subcategory-list-visible {
+  max-height: 1000px; /* Expand to full height */
+  opacity: 1; /* Fully opaque */
+  transform: scaleY(1); /* Scale to full size */
+  transition-delay: 2s; /* Delay of 0.5s before starting the transition */
+}
+
+/* Custom */
+
+.all{
+  /* https://png.pngtree.com/thumb_back/fh260/background/20230706/pngtree-illustrated-rendering-of-online-shopping-technology-with-ecommerce-add-to-cart-image_3812964.jpg */
+  /* background-image: url("E-CommerceBack.jpg"); */
+  /* background-image: url("https://png.pngtree.com/thumb_back/fh260/background/20230706/pngtree-illustrated-rendering-of-online-shopping-technology-with-ecommerce-add-to-cart-image_3812964.jpg") norepeat; */
+
+  height: 100vh; /* Full height of the viewport */
+    width: 100%; /* Full width of the viewport */
+    /* background-image: url("https://tse2.mm.bing.net/th?id=OIP.GTiMrm39ca5klhpmUzDhaAHaCQ&pid=Api&P=0&h=220"); */
+    /* background-repeat: no-repeat; Prevents the image from repeating */
+    background-size: cover; /* Scales the image to cover the entire container */
+    background-attachment: fixed; /* Keeps the image fixed while scrolling */
+    background-position: center; /* Centers the image in the viewport */
+}
+
+/* BackGround image Custom */
+
+
+/* .wrapper_outer {
+  background-position: fixed;
+} */
+
+.wrapper {}
+
+/* .parallax_section {
+  min-height: 100vh;
+  padding: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100vw;
+  position: relative;
+} */
+.parallax_bg {
+ 
+  /* background-size: cover; */
+  /* background-position: center center; */
+  background-attachment: fixed; /* Added property */
+  /* z-index: -1; */
+  /* min-height: 100%; */
+
+}
+
+
+/* .parallax_section h2 {
+  color: #fff;
+  margin: 0;
+  font-size: 120px;
+  text-shadow: 2px 2px 2px rgba(0, 0, 0, 0.4);
+  text-align: center;
+  text-transform: uppercase;
+} */
+
+
+/* cardz */
+
+.login-box {
+  /* position: relative;
+  width: 400px;
+  height: 450px; */
+  background: transparent;
+  border-radius: 15px;
+  border: 2px solid rgba(255,255,255,.5);
+  /* display: flex;
+  justify-content: center;
+  align-items: center; */
+  backdrop-filter: blur(15px);
+  /* height: 38rem; */
+}
+
+
